@@ -4,7 +4,7 @@
  <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#FFE1A0"/><stop offset=".5" stop-color="#EFC082"/><stop offset="1" stop-color="#FFA586"/></linearGradient>
  <linearGradient id="shade"><stop offset="0" stop-color="#161B2F"/><stop offset=".5" stop-color="#161B2F" stop-opacity=".98"/><stop offset=".72" stop-color="#161B2F" stop-opacity="0"/></linearGradient>
  <clipPath id="about-window"><rect x="16" y="48" width="968" height="232" rx="12"/></clipPath>
- <clipPath id="banner-window"><rect width="1000" height="156" rx="12"/></clipPath>
+ <clipPath id="banner-window"><rect width="1000" height="220" rx="8"/></clipPath>
 </defs><rect width="1000" height="292" fill="#161B2F"/><g font-family="Arial, Helvetica, sans-serif">
  <g fill="none" stroke-linecap="round"><path d="M20 26H980" stroke="#7D492D" stroke-width="5"/><path d="M20 25H980" stroke="#F0BE83" stroke-width="3"/><path d="M20 25H980" stroke="#805335" stroke-width="3" stroke-dasharray="1 5"/></g><path d="M21 6 219 3 212 15 216 33 15 37 21 25 14 27Z" fill="url(#paper)"/>
   <g transform="translate(40 26) scale(.56)"><g transform="translate(0 0)"><path d="M-19 0Q-18-24 0-24T19 0Z" fill="#EFC082" stroke="#805335"/><path d="M-19-5H19V1H-19Z" fill="#B51A2B"/><ellipse rx="31" ry="6" fill="#F0C285" stroke="#805335"/><path d="M-24 2Q0 7 24 2" fill="none" stroke="#805335"/></g></g><text x="62" y="28" font-size="19" fill="#111A29" font-weight="800">ABOUT ME</text>
