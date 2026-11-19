@@ -47,6 +47,15 @@
     "CSS": 169,
     "Not detected": 2
   },
+  "languageBytes": {
+    "Dart": 286860,
+    "TypeScript": 734794,
+    "PLpgSQL": 93737,
+    "CSS": 679827,
+    "JavaScript": 102758,
+    "HTML": 28770,
+    "Python": 6685
+  },
   "days": [
     {
       "date": "2025-11-21",
