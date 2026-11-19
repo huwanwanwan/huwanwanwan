@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://portfolio.juandomanicomilitante.workers.dev"><img src="./profile-assets/reference-link-portfolio-premium-paced-loop-motion.svg" width="170" alt="Portfolio" /></a> &nbsp;&nbsp;&nbsp;
   <a href="https://portfolio.juandomanicomilitante.workers.dev/contact"><img src="./profile-assets/reference-link-email-premium-paced-loop-motion.svg" width="170" alt="Copy my email from the portfolio contact page" /></a> &nbsp;&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/juan-domanico-militante-b0972b363/"><img src="./profile-assets/reference-link-linkedin-premium-paced-loop-motion.svg" width="170" alt="LinkedIn" /></a>
+  <a href="https://www.linkedin.com/in/juan-domanico-militante-88606b445/"><img src="./profile-assets/reference-link-linkedin-premium-paced-loop-motion.svg" width="170" alt="LinkedIn" /></a>
 </p>
 
 <p align="center"><a href="#about-me">About Me</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#tech-stack">Tech Stack</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#selected-projects">Projects</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#github-analytics">Analytics</a> &nbsp;&nbsp;·&nbsp;&nbsp; <a href="#achievements">Achievements</a></p>
@@ -28,5 +28,5 @@
 <a id="achievements"></a>
 <img src="./profile-assets/reference-footer-nautical-premium-paced-loop-motion.svg" width="100%" alt="Completed JavaScript Essentials 1 and Python Essentials 1 courses from Cisco, AWS Cloud Practitioner Essentials course, and a 100/100 InventoPOS academic milestone. Contact Juan by email, LinkedIn, or portfolio." />
 
-<p align="center"><a href="https://portfolio.juandomanicomilitante.workers.dev/contact">Copy email</a> · <a href="https://portfolio.juandomanicomilitante.workers.dev">Portfolio</a> · <a href="https://www.linkedin.com/in/juan-domanico-militante-b0972b363/">LinkedIn</a></p>
+<p align="center"><a href="https://portfolio.juandomanicomilitante.workers.dev/contact">Copy email</a> · <a href="https://portfolio.juandomanicomilitante.workers.dev">Portfolio</a> · <a href="https://www.linkedin.com/in/juan-domanico-militante-88606b445/">LinkedIn</a></p>
 <p align="center"><sub>Updated daily from public GitHub data. Charts cover owned public repositories. Most Used Languages measures code bytes; Languages by Commit uses each repository's main language. Streaks count consecutive contribution days, not total active days. One Piece inspired fan artwork.</sub></p>
