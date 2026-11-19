@@ -134,17 +134,13 @@ totals.forEach(([symbol,value,title],index)=>{
 });
 const streakSkull=skull(928,126,1.35,1).replace(/#BDD0E3/g,'#EDF1F7');
 analytics+=panel(600,60,384,124)+text(624,94,'GitHub Streak',19,colors.ink,'font-weight="700"')+text(624,139,`${streak} ${streak===1?'Day':'Days'}`,38,colors.peach,'font-weight="700"')+text(624,165,'Current streak',14,colors.muted)+text(782,171,`Longest: ${longest} days`,12,colors.muted)+streakSkull;
-analytics+=panel(16,208,968,190)+text(40,243,'Monthly Contributions',19,colors.ink,'font-weight="700"');
-const months=new Map();for(const day of data.days)months.set(day.date.slice(0,7),(months.get(day.date.slice(0,7))||0)+day.count);
-const entries=[...months];const max=Math.max(1,...entries.map(([,value])=>value));
-const chartLeft=48,chartRight=952,baseline=352,maxHeight=88,slotWidth=(chartRight-chartLeft)/Math.max(1,entries.length),barWidth=Math.min(40,slotWidth*.58);
-analytics+=`<path d="M${chartLeft} ${baseline}H${chartRight}" fill="none" stroke="${colors.slate}" stroke-width="1"/>`;
-entries.forEach(([month,value],index)=>{
- const x=chartLeft+index*slotWidth+(slotWidth-barWidth)/2;
- const height=value/max*maxHeight;
- analytics+=`<rect class="motion-bar" style="animation-delay:${index*60}ms" x="${x.toFixed(1)}" y="${(baseline-height).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${height.toFixed(1)}" rx="4" fill="${index%2===0?colors.peach:colors.crimson}"><title>${month}: ${value} contributions</title></rect>`;
- if(index%2===0)analytics+=text(x+barWidth/2,379,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),13,colors.muted,'text-anchor="middle"');
-});
+const monthlyContributions=new Map();for(const day of data.days)monthlyContributions.set(day.date.slice(0,7),(monthlyContributions.get(day.date.slice(0,7))||0)+day.count);
+const monthEntries=[...monthlyContributions];
+analytics+=panel(16,208,968,190)+text(40,243,'Contribution History',19,colors.ink,'font-weight="700"');
+const max=Math.max(1,...monthEntries.map(([,value])=>value));const points=monthEntries.map(([,value],index)=>[48+index*904/Math.max(1,monthEntries.length-1),352-value/max*88]);
+const path=points.map(([x,y],index)=>`${index?'L':'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ');
+analytics+=`<path d="${path}L952 352H48Z" fill="#B51A2B" fill-opacity=".6"/><path d="${path}" fill="none" stroke="#FFA586" stroke-width="3"/>`;
+monthEntries.forEach(([month],index)=>{const [x,y]=points[index];analytics+=`<circle cx="${x}" cy="${y}" r="3" fill="#FFA586"/>`;if(index%2===0)analytics+=text(x,379,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),13,colors.muted,'text-anchor="middle"');});
 const languageEntries=Object.entries(data.languageBytes).filter(([,bytes])=>bytes>0).sort((a,b)=>b[1]-a[1]);
 const languageTotal=languageEntries.reduce((sum,[,bytes])=>sum+bytes,0);
 const displayedLanguages=languageEntries.slice(0,4);
@@ -157,11 +153,17 @@ displayedLanguages.forEach(([name,bytes],index)=>{
 analytics+=languageDonut(512,422,'Languages by Commit',data.commitLanguageCounts,'commits');
 await save('dashboard-reference-color-skull',692,`GitHub analytics — ${data.updated}; languages measured by public code bytes; current streak ${streak} days`,analytics);
 
-let calendar=panel(16,6,968,218)+icon('chart',40,24,24)+text(76,43,'CONTRIBUTION ACTIVITY',18,colors.ink,'font-weight="700"')+text(958,43,`${data.total} contributions in the last 365 days`,13,colors.muted,'text-anchor="end"');
-const weekday=new Date(`${data.days[0].date}T00:00:00Z`).getUTCDay();const heat=['#161B2F','#384358','#541A2E','#B51A2B','#FFA586'];let month='';
-data.days.forEach((day,index)=>{const position=weekday+index;const col=Math.floor(position/7);const row=position%7;const x=48+col*16.5;const y=82+row*16;const next=day.date.slice(0,7);if(next!==month&&col<51){calendar+=text(x,69,new Date(`${day.date}T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),11,colors.muted);month=next;}calendar+=`<rect x="${x}" y="${y}" width="14" height="12" rx="2" fill="${heat[day.level]}"><title>${day.date}: ${day.count} contributions</title></rect>`;});
-calendar+=text(830,212,'Less',11,colors.muted);heat.forEach((color,index)=>{calendar+=`<rect x="${868+index*13}" y="202" width="10" height="10" fill="${color}"/>`;});calendar+=text(943,212,'More',11,colors.muted);
-await save('activity-reference-airy',240,'GitHub contribution calendar; real daily counts',calendar);
+let activity=panel(16,6,968,218)+icon('chart',40,24,24)+text(76,43,'CONTRIBUTION ACTIVITY',18,colors.ink,'font-weight="700"')+text(958,43,`${data.total} contributions in the last 365 days`,13,colors.muted,'text-anchor="end"');
+const monthlyMax=Math.max(1,...monthEntries.map(([,value])=>value));
+const chartLeft=56,chartRight=944,baseline=178,maxHeight=90,slotWidth=(chartRight-chartLeft)/Math.max(1,monthEntries.length),barWidth=Math.min(40,slotWidth*.58);
+activity+=`<path d="M${chartLeft} ${baseline}H${chartRight}" fill="none" stroke="${colors.slate}" stroke-width="1"/>`;
+monthEntries.forEach(([month,value],index)=>{
+ const x=chartLeft+index*slotWidth+(slotWidth-barWidth)/2;
+ const height=value/monthlyMax*maxHeight;
+ activity+=`<rect class="motion-bar" style="animation-delay:${index*60}ms" x="${x.toFixed(1)}" y="${(baseline-height).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${height.toFixed(1)}" rx="4" fill="${index%2===0?colors.peach:colors.crimson}"><title>${month}: ${value} contributions</title></rect>`;
+ if(index%2===0)activity+=text(x+barWidth/2,202,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),11,colors.muted,'text-anchor="middle"');
+});
+await save('activity-reference-airy',240,'Monthly GitHub contributions; real monthly totals',activity);
 
 let footer=rope(26,20,430)+label('ACHIEVEMENTS','trophy',14,3,260)+rope(26,500,480)+label('GET IN TOUCH','anchor',492,3,250);
 const certificates=[['code','JavaScript','Essentials 1','Cisco · 2026'],['code','Python','Essentials 1','Cisco · 2026'],['server','AWS Cloud','Practitioner Essentials','Course completed · 2025']];

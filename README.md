@@ -22,8 +22,8 @@
 <a href="https://portfolio.juandomanicomilitante.workers.dev/projects"><img src="./profile-assets/reference-projects-color-wheel-premium-paced-loop-motion.svg" width="100%" alt="Selected projects: SigLa, BAHAlerto, RecogniZarenus, InventoPOS. Skills in web and mobile development, system design, databases, UI/UX, API integration, problem solving, and teamwork." /></a>
 
 <a id="github-analytics"></a>
-<a href="https://github.com/huwanwanwan?tab=repositories"><img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/dashboard-reference-color-skull-premium-paced-loop-motion.svg" width="100%" alt="Real GitHub repositories, authored commits, contributions, followers, current and longest streaks, monthly contribution chart, and language charts." /></a>
-<img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/activity-reference-airy-premium-paced-loop-motion.svg" width="100%" alt="GitHub contribution calendar for the last 365 days." />
+<a href="https://github.com/huwanwanwan?tab=repositories"><img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/dashboard-reference-color-skull-premium-paced-loop-motion.svg" width="100%" alt="Real GitHub repositories, authored commits, contributions, followers, current and longest streaks, contribution history line chart, and language charts." /></a>
+<img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/activity-reference-airy-premium-paced-loop-motion.svg" width="100%" alt="Monthly GitHub contribution column chart." />
 
 <a id="achievements"></a>
 <img src="./profile-assets/reference-footer-nautical-premium-paced-loop-motion.svg" width="100%" alt="Completed JavaScript Essentials 1 and Python Essentials 1 courses from Cisco, AWS Cloud Practitioner Essentials course, and a 100/100 InventoPOS academic milestone. Contact Juan by email, LinkedIn, or portfolio." />
