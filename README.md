@@ -1,7 +1,7 @@
 <div align="center">
 
   <a href="https://portfolio.juandomanicomilitante.workers.dev" target="_blank">
-    <img src="./cover.png" alt="Juan Domanico Militante - Profile Cover" width="100%" style="max-width: 100%; height: auto;" />
+    <img src="./git_cover.png" alt="Juan Domanico Militante - Profile Cover" width="100%" style="max-width: 100%; height: auto;" />
   </a>
 
   <br /><br />
