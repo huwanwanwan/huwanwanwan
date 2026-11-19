@@ -139,7 +139,7 @@ const monthEntries=[...monthlyContributions];
 analytics+=panel(16,208,968,190)+text(40,243,'Contribution History',19,colors.ink,'font-weight="700"');
 const max=Math.max(1,...monthEntries.map(([,value])=>value));const points=monthEntries.map(([,value],index)=>[48+index*904/Math.max(1,monthEntries.length-1),352-value/max*88]);
 const path=points.map(([x,y],index)=>`${index?'L':'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ');
-analytics+=`<path d="${path}L952 352H48Z" fill="#B51A2B" fill-opacity=".6"/><path class="motion-line" d="${path}" fill="none" stroke="#FFA586" stroke-width="3"/>`;
+analytics+=`<path d="${path}L952 352H48Z" fill="#B51A2B" fill-opacity=".6"/><path d="${path}" fill="none" stroke="#FFA586" stroke-width="3"/>`;
 monthEntries.forEach(([month],index)=>{const [x,y]=points[index];analytics+=`<circle cx="${x}" cy="${y}" r="3" fill="#FFA586"/>`;if(index%2===0)analytics+=text(x,379,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),13,colors.muted,'text-anchor="middle"');});
 const languageEntries=Object.entries(data.languageBytes).filter(([,bytes])=>bytes>0).sort((a,b)=>b[1]-a[1]);
 const languageTotal=languageEntries.reduce((sum,[,bytes])=>sum+bytes,0);
