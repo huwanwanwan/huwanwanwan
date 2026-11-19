@@ -134,12 +134,17 @@ totals.forEach(([symbol,value,title],index)=>{
 });
 const streakSkull=skull(928,126,1.35,1).replace(/#BDD0E3/g,'#EDF1F7');
 analytics+=panel(600,60,384,124)+text(624,94,'GitHub Streak',19,colors.ink,'font-weight="700"')+text(624,139,`${streak} ${streak===1?'Day':'Days'}`,38,colors.peach,'font-weight="700"')+text(624,165,'Current streak',14,colors.muted)+text(782,171,`Longest: ${longest} days`,12,colors.muted)+streakSkull;
-analytics+=panel(16,208,968,190)+text(40,243,'Contribution History',19,colors.ink,'font-weight="700"');
+analytics+=panel(16,208,968,190)+text(40,243,'Monthly Contributions',19,colors.ink,'font-weight="700"');
 const months=new Map();for(const day of data.days)months.set(day.date.slice(0,7),(months.get(day.date.slice(0,7))||0)+day.count);
-const entries=[...months];const max=Math.max(1,...entries.map(([,value])=>value));const points=entries.map(([,value],index)=>[48+index*904/Math.max(1,entries.length-1),352-value/max*88]);
-const path=points.map(([x,y],index)=>`${index?'L':'M'}${x.toFixed(1)} ${y.toFixed(1)}`).join(' ');
-analytics+=`<path d="${path}L952 352H48Z" fill="#B51A2B" fill-opacity=".6"/><path d="${path}" fill="none" stroke="#FFA586" stroke-width="3"/>`;
-entries.forEach(([month],index)=>{const [x,y]=points[index];analytics+=`<circle cx="${x}" cy="${y}" r="3" fill="#FFA586"/>`;if(index%2===0)analytics+=text(x,379,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),13,colors.muted,'text-anchor="middle"');});
+const entries=[...months];const max=Math.max(1,...entries.map(([,value])=>value));
+const chartLeft=48,chartRight=952,baseline=352,maxHeight=88,slotWidth=(chartRight-chartLeft)/Math.max(1,entries.length),barWidth=Math.min(40,slotWidth*.58);
+analytics+=`<path d="M${chartLeft} ${baseline}H${chartRight}" fill="none" stroke="${colors.slate}" stroke-width="1"/>`;
+entries.forEach(([month,value],index)=>{
+ const x=chartLeft+index*slotWidth+(slotWidth-barWidth)/2;
+ const height=value/max*maxHeight;
+ analytics+=`<rect class="motion-bar" style="animation-delay:${index*60}ms" x="${x.toFixed(1)}" y="${(baseline-height).toFixed(1)}" width="${barWidth.toFixed(1)}" height="${height.toFixed(1)}" rx="4" fill="${index%2===0?colors.peach:colors.crimson}"><title>${month}: ${value} contributions</title></rect>`;
+ if(index%2===0)analytics+=text(x+barWidth/2,379,new Date(`${month}-01T00:00:00Z`).toLocaleDateString('en-US',{month:'short',timeZone:'UTC'}),13,colors.muted,'text-anchor="middle"');
+});
 const languageEntries=Object.entries(data.languageBytes).filter(([,bytes])=>bytes>0).sort((a,b)=>b[1]-a[1]);
 const languageTotal=languageEntries.reduce((sum,[,bytes])=>sum+bytes,0);
 const displayedLanguages=languageEntries.slice(0,4);

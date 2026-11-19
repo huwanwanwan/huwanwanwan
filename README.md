@@ -2,8 +2,7 @@
   <img src="./profile-assets/reference-banner-sharp-premium-paced-loop-motion.svg" width="100%" alt="Wancor pirate banner — Juan Domanico Militante, Web and Mobile Developer" />
 </div>
 
-<p align="center"><img src="./profile-assets/name-one-piece-peach.svg" width="100%" alt="Juan Domanico Militante in One Piece-style lettering with a soft yellow surname" /></p>
-<p align="center">Web &amp; Mobile Developer | BSIT Student</p>
+<p align="center"><img src="./profile-assets/name-one-piece-peach.svg" width="100%" alt="Juan Domanico Militante in One Piece-style lettering with a soft yellow surname" /><br />Web &amp; Mobile Developer | BSIT Student</p>
 
 <p align="center">
   <a href="https://portfolio.juandomanicomilitante.workers.dev"><img src="./profile-assets/reference-link-portfolio-premium-paced-loop-motion.svg" width="170" alt="Portfolio" /></a> &nbsp;&nbsp;&nbsp;
@@ -23,7 +22,7 @@
 <a href="https://portfolio.juandomanicomilitante.workers.dev/projects"><img src="./profile-assets/reference-projects-color-wheel-premium-paced-loop-motion.svg" width="100%" alt="Selected projects: SigLa, BAHAlerto, RecogniZarenus, InventoPOS. Skills in web and mobile development, system design, databases, UI/UX, API integration, problem solving, and teamwork." /></a>
 
 <a id="github-analytics"></a>
-<a href="https://github.com/huwanwanwan?tab=repositories"><img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/dashboard-reference-color-skull-premium-paced-loop-motion.svg" width="100%" alt="Real GitHub repositories, authored commits, contributions, followers, current and longest streaks, contribution history, and language charts." /></a>
+<a href="https://github.com/huwanwanwan?tab=repositories"><img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/dashboard-reference-color-skull-premium-paced-loop-motion.svg" width="100%" alt="Real GitHub repositories, authored commits, contributions, followers, current and longest streaks, monthly contribution chart, and language charts." /></a>
 <img src="https://raw.githubusercontent.com/huwanwanwan/huwanwanwan/main/profile-assets/activity-reference-airy-premium-paced-loop-motion.svg" width="100%" alt="GitHub contribution calendar for the last 365 days." />
 
 <a id="achievements"></a>
