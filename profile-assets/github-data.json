@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-20",
   "publicRepos": 4,
-  "followers": 1,
+  "followers": 2,
   "authoredCommits": 368,
   "total": 334,
   "activeDays": 17,
@@ -52,9 +52,9 @@
     "TypeScript": 734794,
     "PLpgSQL": 93737,
     "CSS": 679827,
-    "JavaScript": 148446,
+    "JavaScript": 148650,
     "HTML": 28770,
-    "Python": 12594
+    "Python": 13493
   },
   "days": [
     {
